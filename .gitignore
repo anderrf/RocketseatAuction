@@ -1,2 +1,41 @@
-src/appsettings.json
-.vs
+# Ignore bin and obj directories
+bin/
+obj/
+
+# Ignore Visual Studio user-specific files
+*.user
+*.suo
+
+# Ignore Visual Studio workspace-specific files
+.vs/
+
+# Ignore NuGet package directory
+packages/
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.vspscc
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.suo
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.bin
+*.htm
+*.html
+*.sln.docstates
+
+src/RocketseatAuction.API/appsettings.json
+src/RocketseatAuction.API/appsettings.Development.json
