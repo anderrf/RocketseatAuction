@@ -30,3 +30,4 @@ C:\Users\ModalGR\Desktop\cursos\NLW_Csharp\RocketseatAuction\src\RocketseatAucti
 C:\Users\ModalGR\Desktop\cursos\NLW_Csharp\RocketseatAuction\src\RocketseatAuction.API\obj\Debug\net8.0\RocketseatAuction.API.pdb
 C:\Users\ModalGR\Desktop\cursos\NLW_Csharp\RocketseatAuction\src\RocketseatAuction.API\obj\Debug\net8.0\RocketseatAuction.API.genruntimeconfig.cache
 C:\Users\ModalGR\Desktop\cursos\NLW_Csharp\RocketseatAuction\src\RocketseatAuction.API\obj\Debug\net8.0\ref\RocketseatAuction.API.dll
+C:\Users\ModalGR\Desktop\cursos\NLW_Csharp\RocketseatAuction\src\RocketseatAuction.API\obj\Debug\net8.0\RocketseatAuction.API.sourcelink.json
