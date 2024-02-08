@@ -37,5 +37,6 @@ packages/
 *.html
 *.sln.docstates
 
-src/RocketseatAuction.API/appsettings.json
-src/RocketseatAuction.API/appsettings.Development.json
+# Ignore appsettings json files
+*/appsettings.json
+*/appsettings.Development.json
