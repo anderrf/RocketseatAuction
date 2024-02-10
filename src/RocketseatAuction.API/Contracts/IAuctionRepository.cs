@@ -1,8 +1,10 @@
 ﻿using RocketseatAuction.API.Entities;
 
-namespace RocketseatAuction.API.Contracts;
-
-public interface IAuctionRepository
+namespace RocketseatAuction.API.Contracts
 {
-    Auction? GetCurrent();
+
+    public interface IAuctionRepository
+    {
+        Auction? GetCurrent();
+    }
 }

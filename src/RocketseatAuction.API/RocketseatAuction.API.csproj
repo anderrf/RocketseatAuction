@@ -14,7 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Communication\Responses\" />
+    <EditorConfigFiles Remove="C:\Users\ModalGR\Desktop\cursos\NLW_Csharp\RocketseatAuction\src\RocketseatAuction.API\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\ModalGR\Desktop\cursos\NLW_Csharp\RocketseatAuction\src\RocketseatAuction.API\.editorconfig" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,8 @@
-﻿namespace RocketseatAuction.API.Communication.Requests;
-
-public class RequestCreateOfferJson
+﻿namespace RocketseatAuction.API.Communication.Requests
 {
-    public decimal Price { get; set; }
+
+    public class RequestCreateOfferJson
+    {
+        public decimal Price { get; set; }
+    }
 }

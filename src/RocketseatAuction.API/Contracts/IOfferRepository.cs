@@ -1,8 +1,10 @@
 ﻿using RocketseatAuction.API.Entities;
 
-namespace RocketseatAuction.API.Contracts;
-
-public interface IOfferRepository
+namespace RocketseatAuction.API.Contracts
 {
-    void Add(Offer offer);
+
+    public interface IOfferRepository
+    {
+        void Add(Offer offer);
+    }
 }
