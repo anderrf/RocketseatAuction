@@ -3,8 +3,8 @@
 namespace RocketseatAuction.API.Contracts
 {
 
-    public interface IAuctionRepository
+    public interface IItemRepository
     {
-        Auction? GetCurrent();
+        bool ExistsItemWithId(int id);
     }
 }

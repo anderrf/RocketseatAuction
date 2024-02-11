@@ -13,7 +13,7 @@ public class LoggedUser : ILoggedUser
         _repository = repository;
     }
 
-    public User User()
+    public User? User()
     {
         var token = TokenOnRequest();
         var email = FromBase64String(token);

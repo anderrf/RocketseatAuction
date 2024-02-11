@@ -15,28 +15,32 @@ using RocketseatAuction.API.UseCases.Offers.CreateOffer;
 using RocketseatAuction.API.Communication.Requests;
 using RocketseatAuction.API.Services;
 
-namespace UseCases.Test.Auctions.GetCurrent;
-public class CreateOfferUseCaseTest
+namespace UseCases.Test.Auctions.GetCurrent
 {
-    [Theory]
-    [InlineData(1)]
-    [InlineData(2)]
-    [InlineData(3)]
-    public void Success(int itemId)
+    public class CreateOfferUseCaseTest
     {
-        //Arrange
-        var request = new Faker<RequestCreateOfferJson>()
-            .RuleFor(request => request.Price, f => f.Random.Decimal(1, 700))
-            .Generate();
-        var offerRepository = new Mock<IOfferRepository>();
-        var loggedUser = new Mock<ILoggedUser>();
-        loggedUser.Setup(i => i.User()).Returns(new User());
-        var useCase = new CreateOfferUseCase(loggedUser.Object, offerRepository.Object);
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void Success(int itemId)
+        {
+            //Arrange
+            var request = new Faker<RequestCreateOfferJson>()
+                .RuleFor(request => request.Price, f => f.Random.Decimal(1, 700))
+                .Generate();
+            var offerRepository = new Mock<IOfferRepository>();
+            var itemRepository = new Mock<IItemRepository>();
+            itemRepository.Setup(i => i.ExistsItemWithId(itemId)).Returns(true);
+            var loggedUser = new Mock<ILoggedUser>();
+            loggedUser.Setup(i => i.User()).Returns(new User());
+            var useCase = new CreateOfferUseCase(loggedUser.Object, offerRepository.Object, itemRepository.Object);
 
-        //Act
-        var act = () => useCase.Execute(itemId, request);
+            //Act
+            var act = () => useCase.Execute(itemId, request);
 
-        //Assert
-        act.Should().NotThrow();
+            //Assert
+            act.Should().NotThrow();
+        }
     }
 }

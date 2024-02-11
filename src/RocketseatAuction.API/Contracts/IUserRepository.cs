@@ -1,9 +1,11 @@
 ﻿using RocketseatAuction.API.Entities;
 
-namespace RocketseatAuction.API.Contracts;
-
-public interface IUserRepository
+namespace RocketseatAuction.API.Contracts
 {
-    bool ExistsUserWithEmail(string email);
-    User GetUserByEmail(string email);
+
+    public interface IUserRepository
+    {
+        bool ExistsUserWithEmail(string email);
+        User? GetUserByEmail(string email);
+    }
 }
