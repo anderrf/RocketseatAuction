@@ -14,5 +14,5 @@ public class UserRepository : IUserRepository
         return _dbContext.Users.Any(user => user.Email.Equals(email));
     }
 
-    public User GetUserByEmail(string email) => _dbContext.Users.First(user => user.Email.Equals(email));
+    public User? GetUserByEmail(string email) => _dbContext.Users.FirstOrDefault(user => user.Email.Equals(email));
 }

@@ -30,9 +30,11 @@ namespace UseCases.Test.Auctions.GetCurrent
                 .RuleFor(request => request.Price, f => f.Random.Decimal(1, 700))
                 .Generate();
             var offerRepository = new Mock<IOfferRepository>();
+            var itemRepository = new Mock<IItemRepository>();
+            itemRepository.Setup(i => i.ExistsItemWithId(itemId)).Returns(true);
             var loggedUser = new Mock<ILoggedUser>();
             loggedUser.Setup(i => i.User()).Returns(new User());
-            var useCase = new CreateOfferUseCase(loggedUser.Object, offerRepository.Object);
+            var useCase = new CreateOfferUseCase(loggedUser.Object, offerRepository.Object, itemRepository.Object);
 
             //Act
             var act = () => useCase.Execute(itemId, request);

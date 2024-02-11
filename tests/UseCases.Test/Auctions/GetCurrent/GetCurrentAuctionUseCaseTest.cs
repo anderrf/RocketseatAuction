@@ -42,12 +42,12 @@ namespace UseCases.Test.Auctions.GetCurrent
 
             //Act
             var result = useCase.Execute();
-            var auction = result.Auction;
+            var auction = result;
 
             //Assert
             auction.Should().NotBeNull();
-            auction.Id.Should().Be(entity.Id);
-            auction.Name.Should().Be(entity.Name);
+            auction?.Id.Should().Be(entity.Id);
+            auction?.Name.Should().Be(entity.Name);
         }
     }
 }
