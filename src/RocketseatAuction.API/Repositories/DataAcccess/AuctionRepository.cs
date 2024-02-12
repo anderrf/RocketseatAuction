@@ -18,4 +18,10 @@ public class AuctionRepository : IAuctionRepository
             .Include(auction => auction.Items)
             .FirstOrDefault(auction => today >= auction.Starts && today <= auction.Ends);
     }
+
+    public void Add(Auction auction)
+    {
+        _dbContext.Auctions.Add(auction);
+        _dbContext.SaveChanges();
+    }
 }

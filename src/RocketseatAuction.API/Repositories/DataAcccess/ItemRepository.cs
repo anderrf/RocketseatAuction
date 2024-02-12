@@ -1,4 +1,5 @@
 using RocketseatAuction.API.Contracts;
+using RocketseatAuction.API.Entities;
 
 namespace RocketseatAuction.API.Repositories.DataAcccess
 {
@@ -11,6 +12,10 @@ namespace RocketseatAuction.API.Repositories.DataAcccess
         public bool ExistsItemWithId(int id)
         {
             return _dbContext.Items.Any(item => item.Id == id);
+        }
+
+        public Item? GetById(int id){
+            return _dbContext.Items.FirstOrDefault(item => item.Id == id);
         }
     }
 }

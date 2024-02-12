@@ -26,9 +26,13 @@ public class CreateOfferUseCase
         if(user is null){
             throw new InvalidUserException();
         }
-        var itemExists = _itemRepository.ExistsItemWithId(itemId);
-        if(!itemExists){
+        var item = _itemRepository.GetById(itemId);
+        if(item is null){
             throw new ResourceNotFoundException();
+        }
+        if(request.Price < item.BasePrice)
+        {
+            throw new InsufficientOfferPriceException();
         }
         var offer = new Offer
         {
