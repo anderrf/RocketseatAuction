@@ -24,4 +24,12 @@ public class AuctionRepository : IAuctionRepository
         _dbContext.Auctions.Add(auction);
         _dbContext.SaveChanges();
     }
+
+    public bool ExistsActiveAuctionWithId(int id)
+    {
+        var today = DateTime.Now;
+        return _dbContext
+            .Auctions
+            .Any(auction => auction.Id == id && today >= auction.Starts && today <= auction.Ends);
+    }
 }

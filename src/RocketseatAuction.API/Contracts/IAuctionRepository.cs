@@ -7,5 +7,6 @@ namespace RocketseatAuction.API.Contracts
     {
         Auction? GetCurrent();
         void Add(Auction auction);
+        bool ExistsActiveAuctionWithId(int id);
     }
 }

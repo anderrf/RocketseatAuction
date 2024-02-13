@@ -17,5 +17,10 @@ namespace RocketseatAuction.API.Repositories.DataAcccess
         public Item? GetById(int id){
             return _dbContext.Items.FirstOrDefault(item => item.Id == id);
         }
+
+        public void Add(Item item){
+            _dbContext.Items.Add(item);
+            _dbContext.SaveChanges();
+        }
     }
 }
