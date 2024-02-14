@@ -15,13 +15,19 @@ public class CreateUserUseCase
         _userRepository = userRepository;
     }
 
-    public void Execute(RequestCreateUserJson request)
+    public int Execute(RequestCreateUserJson request)
     {
+        var existsUserWithEmail = _userRepository.ExistsUserWithEmail(request.Email);
+        if(existsUserWithEmail)
+        {
+            throw new UserAlreadyExistsException();
+        }
         var user = new User
         {
             Name = request.Name,
             Email = request.Email
         };
         _userRepository.Add(user);
+        return user.Id;
     }
 }

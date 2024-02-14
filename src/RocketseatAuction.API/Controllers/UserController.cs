@@ -15,6 +15,7 @@ namespace RocketseatAuction.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult CreateUser([FromBody] RequestCreateUserJson request, [FromServices] CreateUserUseCase useCase)
         {
@@ -23,6 +24,10 @@ namespace RocketseatAuction.API.Controllers
                 return Created(string.Empty, null);
             }
             catch(Exception ex){
+                if(ex is UserAlreadyExistsException)
+                {
+                    return Conflict();
+                }
                 return BadRequest();
             }
         }
