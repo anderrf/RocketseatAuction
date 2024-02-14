@@ -7,5 +7,6 @@ namespace RocketseatAuction.API.Contracts
     {
         bool ExistsUserWithEmail(string email);
         User? GetUserByEmail(string email);
+        void Add(User user);
     }
 }
