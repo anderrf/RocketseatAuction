@@ -15,4 +15,10 @@ public class UserRepository : IUserRepository
     }
 
     public User? GetUserByEmail(string email) => _dbContext.Users.FirstOrDefault(user => user.Email.Equals(email));
+
+    public void Add(User user)
+    {
+        _dbContext.Users.Add(user);
+        _dbContext.SaveChanges();
+    }
 }

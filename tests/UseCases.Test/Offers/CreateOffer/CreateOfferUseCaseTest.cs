@@ -15,7 +15,7 @@ using RocketseatAuction.API.UseCases.Offers.CreateOffer;
 using RocketseatAuction.API.Communication.Requests;
 using RocketseatAuction.API.Services;
 
-namespace UseCases.Test.Auctions.GetCurrent
+namespace UseCases.Test.Offers.CreateOffer
 {
     public class CreateOfferUseCaseTest
     {

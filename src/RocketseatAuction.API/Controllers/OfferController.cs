@@ -32,6 +32,9 @@ namespace RocketseatAuction.API.Controllers
                 if(ex is ResourceNotFoundException){
                     return NotFound();
                 }
+                if(ex is InsufficientOfferPriceException){
+                    return BadRequest();
+                }
                 return BadRequest();
             }
         }
